@@ -158,9 +158,6 @@ CSRF_TRUSTED_ORIGINS = ['https://apidnter.azurewebsites.net','https://*.127.0.0.
 # diferentes dominios.
 CORS_ALLOWED_ORIGINS = [ "http://localhost:8000", "http://localhost:27017", "http://localhost:5173", "https://apidnter.azurewebsites.net"]
 
-# REST_FRAMEWORK = {
-#     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
-# }
 
 # Este código está configurando Django REST Framework para usar la autenticación JSON Web Token (JWT).
 # Establece `DEFAULT_AUTHENTICATION_CLASSES` para incluir
@@ -170,7 +167,9 @@ CORS_ALLOWED_ORIGINS = [ "http://localhost:8000", "http://localhost:27017", "htt
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
+    
+),
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
 # `SIMPLE_JWT` es un diccionario que contiene ajustes de configuración para el paquete
 # `rest_framework_simplejwt`, que proporciona autenticación JSON Web Token (JWT) para Django REST

@@ -13,5 +13,5 @@ router.register(r'client', views.clientView, 'client')
 # api versioning
 urlpatterns = [
     path("api/v1/", include(router.urls)),
-    path("docs/", include_docs_urls(title="Clientes Api"))
+    path("docs/", include_docs_urls(title="Cliente Api"))
 ]
