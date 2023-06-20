@@ -68,12 +68,12 @@ WSGI_APPLICATION = 'SsegurosApi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 # Este bloque de código configura los ajustes de la base de datos para el proyecto Django. Está
 # utilizando el motor `djongo` para conectarse a una base de datos MongoDB llamada `softClientes` que
@@ -95,6 +95,16 @@ DATABASES = {
 # }
 
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'softtest',
+        'USER': 'admindbsofttest',
+        'PASSWORD': 'Test123..',
+        'HOST': 'db4free.net',
+        'PORT': '3306',
+    }
+}
 
 
 # Password validation
@@ -142,10 +152,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'apidnter.azurewebsites.net']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'apidnter.azurewebsites.net', 'softclient.000webhostapp.com']
 
 CORS_ORIGIN_WHITELIST = [
-    'https://apidnter.azurewebsites.net', 'http://localhost:8000', 'http://localhost:27017', 'http://localhost:5173'
+    'https://apidnter.azurewebsites.net', 'http://localhost:8000', 'http://localhost:27017', 'http://localhost:5173' , 'https://softclient.000webhostapp.com'
 ]
 
 CSRF_TRUSTED_ORIGINS = ['https://apidnter.azurewebsites.net','https://*.127.0.0.1']
@@ -156,7 +166,7 @@ CSRF_TRUSTED_ORIGINS = ['https://apidnter.azurewebsites.net','https://*.127.0.0.
 # diferentes: `http://localhost:8000`, `http://localhost:27017` y `http://localhost:5173`. Esto es
 # útil cuando se desarrollan aplicaciones web que necesitan realizar solicitudes a las API alojadas en
 # diferentes dominios.
-CORS_ALLOWED_ORIGINS = [ "http://localhost:8000", "http://localhost:27017", "http://localhost:5173", "https://apidnter.azurewebsites.net"]
+CORS_ALLOWED_ORIGINS = [ "http://localhost:8000", "http://localhost:27017", "http://localhost:5173", "https://apidnter.azurewebsites.net", "https://softclient.000webhostapp.com"]
 
 
 # Este código está configurando Django REST Framework para usar la autenticación JSON Web Token (JWT).
